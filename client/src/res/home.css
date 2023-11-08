@@ -4,7 +4,7 @@
     --orange: hsl(34, 97%, 64%);
     --blue: hsl(212, 86%, 64%);
     --varyDarkBlue: hsl(234, 12%, 34%);
-    --grayishBlue: hsl(229, 6%, 66%);
+    --grey: hsl(229, 6%, 66%);
     --veryLightGray: hsl(0, 0%, 98%);
     --weight1: 200;
     --weight2: 400;
@@ -49,19 +49,20 @@ h1:last-of-type {
 .header p {
     margin: 0 auto;
     line-height: 2;
-    color: var(--grayishBlue);
+    color: var(--grey);
 }
 
 
 .box p {
-    color: var(--grayishBlue);
+    color: var(--grey);
 }
 
 .box {
     border-radius: 5px;
-    /* box-shadow: 0px 30px 40px -20px var(--grayishBlue); */
+    border-top: 3px solid var(--blue);
     padding: 30px;
     margin: 20px;  
+    cursor: pointer;
 }
 
 img {
@@ -79,19 +80,6 @@ img {
         text-align: center;
         height: 180px;
     }
-}
-
-.cyan {
-    border-top: 3px solid var(--blue);
-}
-.red {
-    border-top: 3px solid var(--blue);
-}
-.blue {
-    border-top: 3px solid var(--blue);
-}
-.orange {
-    border-top: 3px solid var(--blue);
 }
 
 h2 {

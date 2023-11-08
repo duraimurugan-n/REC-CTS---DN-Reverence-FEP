@@ -8,7 +8,7 @@ import BottomNavBar from '../components/navbar_bottom.component.jsx';
 import Card from '../components/card.component.jsx';
 import axios from 'axios';
 import "../res/home.css";
-import pref1 from "../images/3f50b5.png";
+import pref1 from "../assets/images/3f50b5.png";
 function Preference() {
 
     const [theme, setTheme] = React.useState(
@@ -20,18 +20,22 @@ function Preference() {
     );
     const [data,setData]= React.useState([]);
     const getTheme = () => {
-        axios.get('http://localhost:2003/preference/all', {withCredentials: true}).then((response) => {
-            // setTheme(
-            //   createTheme({
-            //     palette: {
-            //       mode: response.data.theme,
-            //       primary: response.data.color_palette.primary,
-            //       secondary: response.data.color_palette.secondary
-            //     }
-            //   })
-            // );
-            setData(response.data);
+        axios.get('http://localhost:2003/preference/', {withCredentials: true}).then((response) => {
+            setTheme(
+              createTheme({
+                palette: {
+                  mode: response.data.theme,
+                  primary: response.data.color_palette.primary,
+                  secondary: response.data.color_palette.secondary
+                }
+              })
+            );
         });
+    }
+    const getAllTheme = () => {
+      axios.get('http://localhost:2003/preference/all').then((response) => {
+        setData(response.data);
+      })
     }
 
   function toggleTheme() {
@@ -44,6 +48,7 @@ function Preference() {
   
   React.useState(() => {
     getTheme();
+    getAllTheme();
   }, []);
 
   return (
@@ -53,7 +58,7 @@ function Preference() {
       <div className="header"></div>
       <div className="row1-container">
         <Card 
-          class="box box-down cyan"
+          class="box box-down"
           title={data[0]?.name}
           body='Monitors activity to identify project roadblocks'
           img={pref1}
@@ -61,13 +66,13 @@ function Preference() {
             </Card> 
           
         <Card 
-          class="box red"
+          class="box"
           title={data[1]?.name} 
           body='Scans our talent network to create the optimal team for your project' 
           img='https://assets.codepen.io/2301174/icon-team-builder.svg'
         />
         <Card 
-          class="box box-down blue"
+          class="box box-down"
           title={data[2]?.name} 
           body='Uses data from past projects to provide better delivery estimates' 
           img='https://assets.codepen.io/2301174/icon-calculator.svg'
@@ -75,7 +80,7 @@ function Preference() {
       </div>
       <div className="row2-container" >
         <Card 
-          class="box orange"
+          class="box"
           title={data[3]?.name}
           body='Regularly evaluates our talent to ensure quality' 
           img='https://assets.codepen.io/2301174/icon-karma.svg'

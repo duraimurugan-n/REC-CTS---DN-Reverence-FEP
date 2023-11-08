@@ -72,7 +72,7 @@ export default function Home(props) {
               color="text.primary"
               gutterBottom
             >
-              Welcome ! {name}
+              Welcome ! <br></br>{name}
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
             I am a passionate photographer who captures the beauty of life through the lens, turning moments into timeless art. My work is a visual storytelling that speaks volumes without words.

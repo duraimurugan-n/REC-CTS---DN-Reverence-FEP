@@ -15,9 +15,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
-import profile from '../res/images/profile.png';
+import profile from '../assets/images/profile.png';
 
-const pages = ['About', 'Memories', 'Preferences'];
+const pages = ['Home', 'Preferences', 'Memories'];
 const settings = ['Profile', 'Theme', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -36,6 +36,8 @@ function NavBar() {
   const handleCloseNavMenu = async (event) => {
     if (event.target.innerText === 'PREFERENCES') {
       navigate('/preference');
+    } else {
+      navigate('/home');
     }
     setAnchorElNav(null);
   };
