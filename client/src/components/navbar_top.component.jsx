@@ -33,7 +33,10 @@ function NavBar() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = async (event) => {
+    if (event.target.innerText === 'PREFERENCES') {
+      navigate('/preference');
+    }
     setAnchorElNav(null);
   };
 
