@@ -1,8 +1,5 @@
 const express = require("express");
 const bcrypt = require('bcryptjs');
-const qrcode = require('qrcode');
-const speakeasy = require('speakeasy');
-const crypto = require('crypto');
 const { createToken, comparePassword, maxAge, generateOTP, checkEmail } = require("../modules/jwt-auth.modules.js");
 const isLoggedIn = require("../middleware/isLoggedIn.middleware.js");
 const user = require("../models/user.model.js");
