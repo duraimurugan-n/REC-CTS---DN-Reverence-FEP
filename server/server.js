@@ -35,7 +35,7 @@ mongoose.connection.once('open', () => {
     console.log("Connection Established Successfully");
 });
 
-app.listen(port, () => {
+const appServer = app.listen(port, () => {
     console.log(`Server is active on port : ${port}`);
 });
 
@@ -47,3 +47,4 @@ app.use("/user", userRouter);
 app.use("/logout", logoutRouter);
 app.use('/preference',preference);
 
+module.exports = {server: app, appServer};
