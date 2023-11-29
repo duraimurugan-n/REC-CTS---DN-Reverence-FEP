@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\tests\user.spec.js">
+        <testCase name="Test /user User check on /login Login should be okay" duration="2326"/>
+        <testCase name="Test /user User check on /login Login should be okay" duration="1525"/>
+        <testCase name="Test /logout Logout should be okay" duration="1383"/>
+    </file>
+</testExecutions>
