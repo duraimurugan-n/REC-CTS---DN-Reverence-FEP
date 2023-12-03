@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
     <file path="D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\tests\user.spec.js">
-        <testCase name="Test /user User check on /login Login should be okay" duration="2326"/>
-        <testCase name="Test /user User check on /login Login should be okay" duration="1525"/>
-        <testCase name="Test /logout Logout should be okay" duration="1383"/>
+        <testCase name="Test /user User check on /login Login should be okay" duration="1979">
+            <failure message="Error: listen EADDRINUSE: address already in use :::2003"><![CDATA[Error: listen EADDRINUSE: address already in use :::2003
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\express\lib\application.js:635:24)
+    at Object.listen (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\server.js:38:23)
+    at Runtime._execModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:1439:24)
+    at Runtime._loadModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:1022:12)
+    at Runtime.requireModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:882:12)
+    at Runtime.requireModuleOrMock (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:1048:21)
+    at Object.require (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\tests\user.spec.js:2:29)
+    at Runtime._execModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:1439:24)
+    at Runtime._loadModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:1022:12)
+    at Runtime.requireModule (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runtime\build\index.js:882:12)
+    at jestAdapter (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:77:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runTestInternal (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (D:\Github Repos\REC-CTS-DN-Reverence-FEP\server\node_modules\jest-runner\build\runTest.js:444:34)]]></failure>
+        </testCase>
+        <testCase name="Test /user User check on /login Login should be okay" duration="698"/>
+        <testCase name="Test /logout Logout should be okay" duration="658"/>
     </file>
 </testExecutions>

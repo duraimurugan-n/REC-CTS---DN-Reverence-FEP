@@ -35,4 +35,13 @@ router.get("/all", async (req,res)=>{
     }
 })
 
+router.post("/set?:id",async(req,res)=>{
+    try{
+        const user_pref = await user.findOneAndUpdate({email:req.user.email},{pref_id:req.params.id});
+        res.status(200).json(userPreference);
+    }catch(e){
+        console.log(e);
+    }
+})
+
 module.exports= router;
