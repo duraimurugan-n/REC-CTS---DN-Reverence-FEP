@@ -43,6 +43,9 @@ function NavBar() {
   };
 
   const handleCloseUserMenu = async (event) => {
+    if (event.target.innerHTML === 'Profile') {
+        navigate('/profile');
+    }
     if (event.target.innerHTML === 'Logout') {
       await axios.get('http://localhost:2003/logout', {withCredentials: true}).then(() => {
         navigate('/');
