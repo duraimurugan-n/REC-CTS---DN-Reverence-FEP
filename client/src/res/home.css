@@ -63,6 +63,7 @@ h1:last-of-type {
     padding: 30px;
     margin: 20px;  
     cursor: pointer;
+    width: 300px !important;
 }
 
 img {
