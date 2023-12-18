@@ -83,7 +83,7 @@ export default function Home(props) {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">+ Add Memory</Button>
+              <Button variant="contained" onClick={() => { window.location = '/add-memory' }}>+ Add Memory</Button>
               <Button variant="outlined">Recent Memory</Button>
             </Stack>
           </Container>
