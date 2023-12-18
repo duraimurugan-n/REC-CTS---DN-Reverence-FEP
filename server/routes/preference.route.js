@@ -4,6 +4,7 @@ const isLoggedIn = require("../middleware/isLoggedIn.middleware.js");
 const user = require("../models/user.model.js");
 const router = express.Router();
 
+// Create Preference
 router.post('/', async (req, res) => {
     console.log(req.body);
     try{
@@ -16,6 +17,7 @@ router.post('/', async (req, res) => {
     
 });
 
+//User Preference Route
 router.get("/",isLoggedIn, async (req,res)=>{
     try{
     const user_detail = await user.findOne({email:req.user.email});
@@ -26,6 +28,7 @@ router.get("/",isLoggedIn, async (req,res)=>{
     }
 });
 
+//All Preferences Route
 router.get("/all", async (req,res)=>{
     try{
     const userPreference = await preference.find();
@@ -35,6 +38,7 @@ router.get("/all", async (req,res)=>{
     }
 })
 
+//Changing User Preference Route
 router.post("/set/?:id",isLoggedIn,async(req,res)=>{
     try{
         const user_pref = await user.findOneAndUpdate({email:req.user.email},{pref_id:req.params.id});

@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 const maxAge = 1 * 24 * 60 * 60* 60; // 60 day in seconds
 
+// JWT Token Creation
 function createToken(payload) {
     const token = jwt.sign(
         payload,
@@ -13,11 +14,13 @@ function createToken(payload) {
     return token;
 }
 
+//Comparing Password
 async function comparePassword(pass, original) {
     const auth = await bcrypt.compare(pass, original);
     return auth;
 }
 
+//Checking Email
 async function checkEmail(payload) {
     payload = jwt.verify(payload, process.env.SECRET);
 

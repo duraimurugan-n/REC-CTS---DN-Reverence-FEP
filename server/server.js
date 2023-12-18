@@ -14,6 +14,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+//Adding Middlewares
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors({
     credentials: true, 
@@ -23,7 +24,7 @@ app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cookieParser());
 
- 
+//Connecting Database 
 mongoose.connect(
     process.env.MONGODB_URI,
     {
@@ -35,14 +36,17 @@ mongoose.connection.once('open', () => {
     console.log("Connection Established Successfully");
 });
 
+//Setting Port Number
 const appServer = app.listen(port, () => {
     console.log(`Server is active on port : ${port}`);
 });
+
 
 app.get('/', (req, res) => {
     res.send("Test");
 });
 
+//Setting Routers
 app.use("/user", userRouter);
 app.use("/logout", logoutRouter);
 app.use('/preference',preference);

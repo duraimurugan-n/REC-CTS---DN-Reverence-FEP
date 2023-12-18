@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import NavBar from '../components/navbar_top.component.jsx';
 
+// Created a Card Component for displaying profile
 
 export default function ActionAreaCard() {
     const [theme, setTheme] = React.useState(
@@ -20,6 +21,9 @@ export default function ActionAreaCard() {
         })
     );
     const [data,setData]= React.useState(null);
+    
+
+    // Getting Profile data from Server
 
     const getProfile = async(req,res) =>{
         axios.get('http://localhost:2003/user/get-details',{withCredentials:true}).then((response) => {
@@ -27,6 +31,7 @@ export default function ActionAreaCard() {
           })
     }
 
+    //Setting User Preference
     const getTheme = async () => {
         await axios.get('http://localhost:2003/preference/', {withCredentials: true}).then((res) => {
             setTheme(

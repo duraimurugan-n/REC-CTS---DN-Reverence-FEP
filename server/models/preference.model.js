@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Database Schema - Preference Collection
 const Schema = mongoose.Schema({
     pref_id:{
         type: Number,

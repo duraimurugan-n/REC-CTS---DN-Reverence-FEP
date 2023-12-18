@@ -19,6 +19,8 @@ export default function Login() {
     const [email, setEmail] = React.useState(null);
     const [password, setPassword] = React.useState(null);
     const navigate = useNavigate();
+
+    //Submitting the Form
     const handleSubmit = async (event) => {
         event.preventDefault();
         const response = await axios.post('http://localhost:2003/user/login', {
@@ -35,6 +37,7 @@ export default function Login() {
 
     };
 
+    //Input Handling
     const handleInput = (event) => {
         if (event.target.id === 'email') {
             setEmail(event.target.value);

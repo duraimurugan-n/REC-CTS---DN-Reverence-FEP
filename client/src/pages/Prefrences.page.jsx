@@ -20,6 +20,8 @@ function Preference() {
         })
     );
     const [data,setData]= React.useState([]);
+
+    //Getting User Preference
     const getTheme = () => {
         axios.get('http://localhost:2003/preference/', {withCredentials: true}).then((response) => {
             setTheme(
@@ -33,12 +35,15 @@ function Preference() {
             );
         });
     }
+
+    //Getting All Preferences
     const getAllTheme = () => {
       axios.get('http://localhost:2003/preference/all').then((response) => {
         setData(response.data);
       })
     }
 
+    //Toggle Theme
   function toggleTheme() {
     setTheme(createTheme({
       palette: {
@@ -58,6 +63,7 @@ function Preference() {
       <NavBar toggleTheme={toggleTheme} curTheme={theme.palette.mode}></NavBar>
       <div className="header"></div>
       <div className="row1-container">
+
         <PreferenceCard 
           class="box-down"
           title={data[0]?.name}

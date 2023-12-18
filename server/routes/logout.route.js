@@ -2,6 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
+//LOGOUT ROUTE
 router.get('/', async (req, res) => {
     try{
         res.cookie('jwt', '', { httpOnly: true, maxAge: 1 });

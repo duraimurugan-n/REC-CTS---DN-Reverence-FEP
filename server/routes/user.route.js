@@ -11,6 +11,8 @@ const fs = require('fs').promises;
 const router = express.Router();
 
 /* TESTING */
+
+//Sign Up Route
 router.post('/signup', async (req, res) => {
     try {
         req.body.password = await bcrypt.hash(req.body.password, 10);
@@ -174,6 +176,8 @@ router.post('/login', async (req, res) => {
 //     })
 // })
 
+
+//Getting User Details
 router.get('/get-details', isLoggedIn, async (req, res) => {
     const user_detail = await user.findOne({ email: req.user.email })
                                     .select({

@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+//Authorization using Cookies
 const isLoggedIn = async (req, res, next) => {
     try {
         if(req.headers.authorization || req.cookies) {
