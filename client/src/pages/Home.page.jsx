@@ -23,6 +23,7 @@ export default function Home(props) {
   );
   const [tasks, setTasks] = React.useState([]);
 
+  //Getting User Preference
   const getTheme = async () => {
     await axios.get('http://localhost:2003/preference/', {withCredentials: true}).then((response) => {
         setTheme(
@@ -37,12 +38,14 @@ export default function Home(props) {
     });
   }
 
+  //Getting User details
   const getName = async () => {
     await axios.get('http://localhost:2003/user/get-details', {withCredentials: true}).then((response) => {
       setName(response.data.name);
     });
   }
 
+  //Getting USer tasks
   const getTasks = async () => {
     axios.get('http://localhost:2003/task/', {withCredentials: true}).then((response) =>{
       // console.log(response.data);

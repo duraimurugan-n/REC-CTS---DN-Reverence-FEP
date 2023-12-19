@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router';
 import profile from '../assets/images/profile.png';
 
 const pages = ['Home', 'Preferences', 'Tasks'];
-const settings = ['Profile', 'Theme', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Logout'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

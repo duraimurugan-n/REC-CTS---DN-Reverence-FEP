@@ -77,14 +77,14 @@ function Preference() {
           title={data[1]?.name} 
           body='Scans our talent network to create the optimal team for your project' 
           img='https://assets.codepen.io/2301174/icon-team-builder.svg'
-          id="3"
+          id="2"
         />
         <PreferenceCard 
           class="box-down"
           title={data[2]?.name} 
           body='Uses data from past projects to provide better delivery estimates' 
           img='https://assets.codepen.io/2301174/icon-calculator.svg'
-          id="6"
+          id="3"
         />
       </div>
       <div className="row2-container" >
@@ -92,7 +92,7 @@ function Preference() {
           title={data[3]?.name}
           body='Regularly evaluates our talent to ensure quality' 
           img='https://assets.codepen.io/2301174/icon-karma.svg'
-          id="5"
+          id="4"
         />
       </div>
       <BottomNavBar></BottomNavBar>

@@ -13,27 +13,45 @@ import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
+import axios from 'axios';
 
 
-
-const theme = createTheme({
-  palette: {
-      mode: 'dark',
-      primary:{
-          main: "rgba(255, 255, 255, 0.7)"
-      },
-      secondary: {
-          main: "#E9C46A"
-      }
-  },
-});
 
 
 export default function AddTask() {
 
   const [title, setTitle] = React.useState(null);
   const [description, setDescription] = React.useState(null);
+
+    const [theme, setTheme] = React.useState(
+      createTheme({
+          palette: {
+              mode: 'light'
+          }
+      })
+    );
+
+
+  //Getting User Preference
+  const getTheme = () => {
+      axios.get('http://localhost:2003/preference/', {withCredentials: true}).then((response) => {
+          setTheme(
+            createTheme({
+              palette: {
+                mode: response.data.theme,
+                primary: response.data.color_palette.primary,
+                secondary: response.data.color_palette.secondary
+              }
+            })
+          );
+      });
+    }
+
+    React.useState(()=>{
+      getTheme();
+    })
   
+  //Adding Tasks
   function submit() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
