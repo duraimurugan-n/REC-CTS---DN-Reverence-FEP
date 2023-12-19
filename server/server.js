@@ -9,17 +9,19 @@ const userRouter = require("./routes/user.route.js");
 const logoutRouter = require("./routes/logout.route.js");
 const preference = require("./routes/preference.route.js");
 const task = require("./routes/task.route.js");
+const helmet = require("helmet");
 
 dotenv.config();
 
 const app = express();
+app.disable('x-powered-by');
 const port = process.env.PORT;
 
 //Adding Middlewares
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors({
     credentials: true, 
-    origin: [process.env.CORS_ACCEPTED_ORIGIN_1,"http://192.168.145.224:3000"]
+    origin: [process.env.CORS_ACCEPTED_ORIGIN_1]
 }));
 app.use(express.json());
 app.use(morgan("tiny"));
