@@ -11,13 +11,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import axios from 'axios';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';import axios from 'axios';
 import { useNavigate } from 'react-router';
 
 import profile from '../assets/images/profile.png';
 
-const pages = ['Home', 'Preferences', 'Memories'];
+const pages = ['Home', 'Preferences', 'Tasks'];
 const settings = ['Profile', 'Theme', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -58,7 +57,7 @@ function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AssignmentTurnedInIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -74,7 +73,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            TASK-LAB
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -113,7 +112,7 @@ function NavBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <AssignmentTurnedInIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -130,7 +129,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            TASK-LAB
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

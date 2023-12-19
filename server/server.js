@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const userRouter = require("./routes/user.route.js");
 const logoutRouter = require("./routes/logout.route.js");
 const preference = require("./routes/preference.route.js");
+const task = require("./routes/task.route.js");
 
 dotenv.config();
 
@@ -50,5 +51,6 @@ app.get('/', (req, res) => {
 app.use("/user", userRouter);
 app.use("/logout", logoutRouter);
 app.use('/preference',preference);
+app.use('/task',task);
 
 module.exports = {server: app, appServer};
